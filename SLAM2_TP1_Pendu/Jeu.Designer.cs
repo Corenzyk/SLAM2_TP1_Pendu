@@ -81,22 +81,23 @@
             // 
             // txt_afficher_prenom_nom
             // 
+            this.txt_afficher_prenom_nom.Enabled = false;
             this.txt_afficher_prenom_nom.Location = new System.Drawing.Point(612, 51);
             this.txt_afficher_prenom_nom.Name = "txt_afficher_prenom_nom";
             this.txt_afficher_prenom_nom.Size = new System.Drawing.Size(167, 20);
             this.txt_afficher_prenom_nom.TabIndex = 2;
-            this.txt_afficher_prenom_nom.Enabled = false;
             // 
             // txt_afficher_diff
             // 
+            this.txt_afficher_diff.Enabled = false;
             this.txt_afficher_diff.Location = new System.Drawing.Point(612, 100);
             this.txt_afficher_diff.Name = "txt_afficher_diff";
             this.txt_afficher_diff.Size = new System.Drawing.Size(167, 20);
             this.txt_afficher_diff.TabIndex = 3;
-            this.txt_afficher_diff.Enabled = false;
             // 
             // txt_afficher_mot
             // 
+            this.txt_afficher_mot.Enabled = false;
             this.txt_afficher_mot.Location = new System.Drawing.Point(12, 317);
             this.txt_afficher_mot.Name = "txt_afficher_mot";
             this.txt_afficher_mot.Size = new System.Drawing.Size(575, 20);

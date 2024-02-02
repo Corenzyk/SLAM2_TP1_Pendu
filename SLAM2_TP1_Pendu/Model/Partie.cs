@@ -9,7 +9,7 @@ namespace SLAM2_TP1_Pendu.Model
 {
     public class Partie
     {
-        public Int32 nbEssais=0;
+        public Int32 nbEssais;
         public String motatrouver;
         public String motaafficher;
         public List<String> listeATrouver;
@@ -63,7 +63,6 @@ namespace SLAM2_TP1_Pendu.Model
                 else
                 {
                     motaafficher += motaff[i];
-                    nbEssais += 1;
                 }
             }
             txt_afficher_mot.Text = motaafficher;

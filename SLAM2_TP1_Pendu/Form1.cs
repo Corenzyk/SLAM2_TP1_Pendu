@@ -26,21 +26,34 @@ namespace SLAM2_TP1_Pendu
         {
             string result1 = "";
             string result2 = "";
+            bool erreur = true;
             if (txt_prenom.Text != "")
                 result1 += txt_prenom.Text + " ";
             else
+            {
                 MessageBox.Show("Aucun prénom n'est rentré", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                erreur = false;
+            }
             if (txt_nom.Text != "")
                 result1 += txt_nom.Text;
             else
+            {
                 MessageBox.Show("Aucun nom n'est rentré", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                erreur = false;
+            }
             if (cb_diff.SelectedIndex > -1)
                 result2 = "La difficultés sélectionnée est:" + cb_diff.SelectedItem.ToString();
             else
+            {
                 MessageBox.Show("Aucun difficulté n'est choisie", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            Jeu J = new Jeu();
-            J.Show();
-            this.Hide();
+                erreur = false;
+            }
+            if (erreur==true)
+            {
+                Jeu J = new Jeu();
+                J.Show();
+                this.Hide();
+            }
         }
         
         public void cb_diff_SelectedIndexChanged(object sender, EventArgs e)

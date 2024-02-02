@@ -35,7 +35,7 @@ namespace SLAM2_TP1_Pendu
         {
             P.verification(((Button)sender).Text.ToString(), txt_afficher_mot);
             P.changerIMG(pb_pendu);
+            ((Button)sender).Enabled = false;
         }
-
     }
 }
