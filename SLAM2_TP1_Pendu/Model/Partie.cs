@@ -59,31 +59,31 @@ namespace SLAM2_TP1_Pendu.Model
             for (int i = 0; i<cArray.Count(); i++)
             {
                 if (cArray[i] == Convert.ToChar(lettretape))
-                {
                     motaafficher += lettretape;
-                }
                 else
+                {
                     motaafficher += motaff[i];
+                    nbEssais += 1;
+                }
             }
             txt_afficher_mot.Text = motaafficher;
         }
 
-        public string genererMotAfficher(string motatrouver)
+        public void genererMotAfficher(string motatrouver)
         {
             string motaff = "";
 
             for (int i=0;i<motatrouver.Count();i++)
                 motaff += "_";
 
-            return motaafficher = motaff;
+            motaafficher = motaff;
         }
 
-        public string choisirMotATrouver(List<String> listeATrouver)
+        public void choisirMotATrouver(List<String> listeATrouver)
         {
             Random aleatoire = new Random();
             int nbAleatoire = aleatoire.Next(listeATrouver.Count);
-            string motchoisi = listeATrouver[nbAleatoire].ToUpper();
-            return motatrouver = motchoisi;
+            motatrouver = listeATrouver[nbAleatoire].ToUpper();
         }
 
     }
