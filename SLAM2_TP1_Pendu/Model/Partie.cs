@@ -12,6 +12,7 @@ namespace SLAM2_TP1_Pendu.Model
         public Int32 nbEssais;
         public String motatrouver;
         public String motaafficher;
+        public List<String> listeATrouver;
 
         public void changerIMG(PictureBox pb_pendu)
         {
@@ -75,6 +76,14 @@ namespace SLAM2_TP1_Pendu.Model
                 motaff += "_";
 
             return motaafficher = motaff;
+        }
+
+        public string genererMotATrouver(List<String> listeATrouver)
+        {
+            Random aleatoire = new Random();
+            int nbAleatoire = aleatoire.Next(listeATrouver.Count);
+            string motchoisi = listeATrouver[nbAleatoire].ToUpper();
+            return motatrouver = motchoisi;
         }
 
     }
