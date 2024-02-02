@@ -25,7 +25,12 @@ namespace SLAM2_TP1_Pendu
                 txt_afficher_mot.Text = P.motaafficher;
             }
         }
-        
+
+        private void btn_Click(object sender, EventArgs e)
+        {
+            P.verification(((Button)sender).Text.ToString(), txt_afficher_mot);
+            P.changerIMG(pb_pendu);
+        }
 
     }
 }
