@@ -44,7 +44,7 @@ namespace SLAM2_TP1_Pendu
             J.Show();
             this.Hide();
         }
-
+        
         private void cb_diff_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cb_diff.SelectedItem.ToString() == "Enfer"){

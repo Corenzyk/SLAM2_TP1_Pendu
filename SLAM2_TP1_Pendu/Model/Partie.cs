@@ -11,6 +11,7 @@ namespace SLAM2_TP1_Pendu.Model
     {
         public Int32 nbEssais;
         public String motatrouver;
+        public String motaafficher;
 
         public void changerIMG(PictureBox pb_pendu)
         {
@@ -66,7 +67,7 @@ namespace SLAM2_TP1_Pendu.Model
             txt_afficher_mot.Text = motaafficher;
         }
 
-        public void genererMotAfficher()
+        public string genererMotAfficher(string motatrouver)
         {
             string motaff = "";
 
