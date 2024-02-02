@@ -9,7 +9,7 @@ namespace SLAM2_TP1_Pendu.Model
 {
     public class Partie
     {
-        public Int32 nbEssais;
+        public Int32 nbEssais=0;
         public String motatrouver;
         public String motaafficher;
         public List<String> listeATrouver;

@@ -22,7 +22,7 @@ namespace SLAM2_TP1_Pendu
             cb_diff.Items.Add("Enfer");
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        public void button1_Click(object sender, EventArgs e)
         {
             string result1 = "";
             string result2 = "";

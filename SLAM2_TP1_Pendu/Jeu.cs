@@ -27,6 +27,7 @@ namespace SLAM2_TP1_Pendu
             P.choisirMotATrouver(listeMotATrouver);
             P.genererMotAfficher(P.motatrouver);
             txt_afficher_mot.Text = P.motaafficher;
+            txt_afficher_prenom_nom.Text = Form1.txt_prenom.Text.ToString() + " " + Form1.txt_nom.Text.ToString();
         }
 
         private void btn_Click(object sender, EventArgs e)
