@@ -17,14 +17,16 @@ namespace SLAM2_TP1_Pendu
         public Jeu()
         {
             InitializeComponent();
-            P = new Partie(); 
-            private void init()
-            {
-                List<string> listeMotATrouver = new List<string> { "Francophile", "Chlorophylle", "Conspirateur", "Qualification", "Attraction", "Cornemuse", "Tourisme", "Diapason", "Brouhaha" };
-                P.choisirMotATrouver(listeMotATrouver);
-                P.genererMotAfficher(P.motatrouver);
-                txt_afficher_mot.Text = P.motaafficher;
-            }
+            P = new Partie();
+            init();
+        }
+
+        private void init()
+        {
+            List<string> listeMotATrouver = new List<string> { "Francophile", "Chlorophylle", "Conspirateur", "Qualification", "Attraction", "Cornemuse", "Tourisme", "Diapason", "Brouhaha" };
+            P.choisirMotATrouver(listeMotATrouver);
+            P.genererMotAfficher(P.motatrouver);
+            txt_afficher_mot.Text = P.motaafficher;
         }
 
         private void btn_Click(object sender, EventArgs e)

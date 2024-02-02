@@ -38,8 +38,6 @@ namespace SLAM2_TP1_Pendu
                 result2 = "La difficultés sélectionnée est:" + cb_diff.SelectedItem.ToString();
             else
                 MessageBox.Show("Aucun difficulté n'est choisie", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //Jeu.txt_afficher_prenom_nom.Text = result1;
-            //Jeu.txt_afficher_diff.Text = result2;
             Jeu J = new Jeu();
             J.Show();
             this.Hide();
