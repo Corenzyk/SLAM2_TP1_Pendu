@@ -56,17 +56,22 @@ namespace SLAM2_TP1_Pendu.Model
             char[] cArray = motatrouver.ToCharArray();
             char[] motaff = motaafficher.ToCharArray();
             motaafficher = "";
+            bool erreur = false;
 
             for (int i = 0; i<cArray.Count(); i++)
             {
                 if (cArray[i] == Convert.ToChar(lettretape))
+                {
                     motaafficher += lettretape;
+                    erreur = true;
+                }
                 else
                 {
                     motaafficher += motaff[i];
-                    nbEssais += 1;
                 }
             }
+            if (!erreur)
+                nbEssais++;
             txt_afficher_mot.Text = motaafficher;
         }
 
