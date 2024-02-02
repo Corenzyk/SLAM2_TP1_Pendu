@@ -43,7 +43,7 @@ namespace SLAM2_TP1_Pendu
             this.Hide();
         }
         
-        private void cb_diff_SelectedIndexChanged(object sender, EventArgs e)
+        public void cb_diff_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cb_diff.SelectedItem.ToString() == "Enfer"){
                 this.BackColor = Color.Red;

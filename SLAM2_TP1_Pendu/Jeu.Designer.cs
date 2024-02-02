@@ -85,6 +85,7 @@
             this.txt_afficher_prenom_nom.Name = "txt_afficher_prenom_nom";
             this.txt_afficher_prenom_nom.Size = new System.Drawing.Size(167, 20);
             this.txt_afficher_prenom_nom.TabIndex = 2;
+            this.txt_afficher_prenom_nom.Enabled = false;
             // 
             // txt_afficher_diff
             // 
@@ -92,6 +93,7 @@
             this.txt_afficher_diff.Name = "txt_afficher_diff";
             this.txt_afficher_diff.Size = new System.Drawing.Size(167, 20);
             this.txt_afficher_diff.TabIndex = 3;
+            this.txt_afficher_diff.Enabled = false;
             // 
             // txt_afficher_mot
             // 
