@@ -78,7 +78,7 @@ namespace SLAM2_TP1_Pendu.Model
             return motaafficher = motaff;
         }
 
-        public string genererMotATrouver(List<String> listeATrouver)
+        public string choisirMotATrouver(List<String> listeATrouver)
         {
             Random aleatoire = new Random();
             int nbAleatoire = aleatoire.Next(listeATrouver.Count);
