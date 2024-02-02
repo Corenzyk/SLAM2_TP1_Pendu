@@ -55,6 +55,7 @@ namespace SLAM2_TP1_Pendu.Model
         {
             char[] cArray = motatrouver.ToCharArray();
             char[] motaff = motaafficher.ToCharArray();
+            motaafficher = "";
 
             for (int i = 0; i<cArray.Count(); i++)
             {
@@ -63,6 +64,7 @@ namespace SLAM2_TP1_Pendu.Model
                 else
                 {
                     motaafficher += motaff[i];
+                    nbEssais += 1;
                 }
             }
             txt_afficher_mot.Text = motaafficher;
