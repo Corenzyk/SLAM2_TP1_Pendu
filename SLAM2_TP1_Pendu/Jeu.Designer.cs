@@ -97,11 +97,14 @@
             // 
             // txt_afficher_mot
             // 
+            this.txt_afficher_mot.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.txt_afficher_mot.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_afficher_mot.Enabled = false;
-            this.txt_afficher_mot.Location = new System.Drawing.Point(12, 317);
+            this.txt_afficher_mot.Location = new System.Drawing.Point(206, 317);
             this.txt_afficher_mot.Name = "txt_afficher_mot";
-            this.txt_afficher_mot.Size = new System.Drawing.Size(575, 20);
+            this.txt_afficher_mot.Size = new System.Drawing.Size(187, 13);
             this.txt_afficher_mot.TabIndex = 4;
+            this.txt_afficher_mot.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btn_a
             // 
