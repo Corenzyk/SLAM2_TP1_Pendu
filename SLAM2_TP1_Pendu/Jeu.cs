@@ -14,23 +14,29 @@ namespace SLAM2_TP1_Pendu
     public partial class Jeu : Form
     {
         Partie P;
-
         List<string> listeMotATrouver;
-        public Jeu()
-        {
-            InitializeComponent();
-            P = new Partie();
-            init();
-        }
 
-        private void init()
+        private void Init()
         {
+            P = new Partie();
+            InitializeComponent();
             listeMotATrouver = new List<string> { "Francophile", "Chlorophylle", "Conspirateur", "Qualification", "Attraction", "Cornemuse", "Tourisme", "Diapason", "Brouhaha" };
             P.choisirMotATrouver(listeMotATrouver);
             P.genererMotAfficher(P.motatrouver);
             txt_afficher_mot.Text = P.motaafficher;
-            //txt_afficher_prenom_nom.Text = Form1.txt_prenom.Text.ToString() + " " + Form1.txt_nom.Text.ToString();
-            //txt_afficher_diff.Text = Form1.cb_diff.SelectedItem.ToString();
+            P.gestionTimer(txt_timer);
+        }
+
+        public Jeu()
+        {
+            Init();
+        }
+
+        public Jeu(string nomPrenomJoueur, string difficultePartie)
+        {
+            Init();
+            txt_afficher_prenom_nom.Text = nomPrenomJoueur;
+            txt_afficher_diff.Text = difficultePartie;
         }
 
         private void btn_Click(object sender, EventArgs e)
@@ -38,7 +44,7 @@ namespace SLAM2_TP1_Pendu
             P.verification(((Button)sender).Text.ToString(), txt_afficher_mot);
             P.changerIMG(pb_pendu);
             ((Button)sender).Enabled = false;
-            P.victoire(this, txt_afficher_mot, listeMotATrouver, pb_pendu);
+            P.victoire(this, txt_afficher_mot, listeMotATrouver, pb_pendu, P.timer);
         }
     }
 }

@@ -21,7 +21,7 @@ namespace SLAM2_TP1_Pendu
             cb_diff.Items.Add("Difficile");
             cb_diff.Items.Add("Enfer");
         }
-
+        
         public void button1_Click(object sender, EventArgs e)
         {
             string result1 = "";
@@ -50,7 +50,7 @@ namespace SLAM2_TP1_Pendu
             }
             if (erreur==true)
             {
-                Jeu J = new Jeu();
+                Jeu J = new Jeu(txt_prenom.Text+" "+txt_nom.Text,cb_diff.SelectedItem.ToString());
                 J.Show();
                 this.Hide();
             }

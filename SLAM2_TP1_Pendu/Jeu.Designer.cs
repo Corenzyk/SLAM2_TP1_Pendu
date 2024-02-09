@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.pan_ = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.pb_pendu = new System.Windows.Forms.PictureBox();
             this.txt_afficher_prenom_nom = new System.Windows.Forms.TextBox();
             this.txt_afficher_diff = new System.Windows.Forms.TextBox();
@@ -59,15 +60,32 @@
             this.p = new System.Windows.Forms.Button();
             this.btn_o = new System.Windows.Forms.Button();
             this.btn_n = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txt_timer = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.pan_.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_pendu)).BeginInit();
             this.SuspendLayout();
             // 
             // pan_
             // 
-            this.pan_.Location = new System.Drawing.Point(599, 32);
+            this.pan_.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pan_.Controls.Add(this.label2);
+            this.pan_.Controls.Add(this.label1);
+            this.pan_.Location = new System.Drawing.Point(587, 12);
             this.pan_.Name = "pan_";
-            this.pan_.Size = new System.Drawing.Size(193, 107);
+            this.pan_.Size = new System.Drawing.Size(193, 127);
             this.pan_.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Enabled = false;
+            this.label1.Location = new System.Drawing.Point(13, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(45, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Joueur :";
             // 
             // pb_pendu
             // 
@@ -82,7 +100,7 @@
             // txt_afficher_prenom_nom
             // 
             this.txt_afficher_prenom_nom.Enabled = false;
-            this.txt_afficher_prenom_nom.Location = new System.Drawing.Point(612, 51);
+            this.txt_afficher_prenom_nom.Location = new System.Drawing.Point(600, 46);
             this.txt_afficher_prenom_nom.Name = "txt_afficher_prenom_nom";
             this.txt_afficher_prenom_nom.Size = new System.Drawing.Size(167, 20);
             this.txt_afficher_prenom_nom.TabIndex = 2;
@@ -90,18 +108,21 @@
             // txt_afficher_diff
             // 
             this.txt_afficher_diff.Enabled = false;
-            this.txt_afficher_diff.Location = new System.Drawing.Point(612, 100);
+            this.txt_afficher_diff.Location = new System.Drawing.Point(600, 100);
             this.txt_afficher_diff.Name = "txt_afficher_diff";
             this.txt_afficher_diff.Size = new System.Drawing.Size(167, 20);
             this.txt_afficher_diff.TabIndex = 3;
             // 
             // txt_afficher_mot
             // 
+            this.txt_afficher_mot.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.txt_afficher_mot.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_afficher_mot.Enabled = false;
-            this.txt_afficher_mot.Location = new System.Drawing.Point(12, 317);
+            this.txt_afficher_mot.Location = new System.Drawing.Point(77, 317);
             this.txt_afficher_mot.Name = "txt_afficher_mot";
-            this.txt_afficher_mot.Size = new System.Drawing.Size(575, 20);
+            this.txt_afficher_mot.Size = new System.Drawing.Size(445, 13);
             this.txt_afficher_mot.TabIndex = 4;
+            this.txt_afficher_mot.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btn_a
             // 
@@ -363,12 +384,42 @@
             this.btn_n.UseVisualStyleBackColor = true;
             this.btn_n.Click += new System.EventHandler(this.btn_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Enabled = false;
+            this.label2.Location = new System.Drawing.Point(13, 69);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(54, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Difficulté :";
+            // 
+            // txt_timer
+            // 
+            this.txt_timer.Enabled = false;
+            this.txt_timer.Location = new System.Drawing.Point(600, 177);
+            this.txt_timer.Name = "txt_timer";
+            this.txt_timer.Size = new System.Drawing.Size(100, 20);
+            this.txt_timer.TabIndex = 31;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Enabled = false;
+            this.label3.Location = new System.Drawing.Point(600, 158);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(39, 13);
+            this.label3.TabIndex = 32;
+            this.label3.Text = "Timer :";
+            // 
             // Jeu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txt_timer);
             this.Controls.Add(this.btn_y);
             this.Controls.Add(this.btn_z);
             this.Controls.Add(this.btn_x);
@@ -402,6 +453,8 @@
             this.Controls.Add(this.pan_);
             this.Name = "Jeu";
             this.Text = "Jeu";
+            this.pan_.ResumeLayout(false);
+            this.pan_.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_pendu)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -441,5 +494,9 @@
         private System.Windows.Forms.Button p;
         private System.Windows.Forms.Button btn_o;
         private System.Windows.Forms.Button btn_n;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txt_timer;
+        private System.Windows.Forms.Label label3;
     }
 }

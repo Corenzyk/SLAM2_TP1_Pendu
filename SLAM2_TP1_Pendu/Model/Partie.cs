@@ -12,6 +12,8 @@ namespace SLAM2_TP1_Pendu.Model
         public Int32 nbEssais;
         public String motatrouver;
         public String motaafficher;
+        public Timer timer;
+        public Int32 tempsPartie;
 
 
         public void changerIMG(PictureBox pb_pendu)
@@ -92,15 +94,16 @@ namespace SLAM2_TP1_Pendu.Model
             motatrouver = listeATrouver[nbAleatoire].ToUpper();
         }
 
-        public void victoire(Form formulaireJeuActif, TextBox txt_motAafficher, List<string> listeMotaTrouver, PictureBox pbpendu)
+        public void victoire(Form formulaireJeuActif, TextBox txt_motAafficher, List<string> listeMotaTrouver, PictureBox pbpendu, Timer timer)
         {
             DialogResult msg;
             if (nbEssais >= 8)
             {
+                timer.Stop();
                 msg = MessageBox.Show("Vous avez perdu !! \r\nVous deviez trouver le mot: " + motatrouver + "\r\nVoulez vous faire une autre partie ??", "You loose", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
                 if (msg == DialogResult.Yes)
                 {
-                    remiseAZero(formulaireJeuActif, txt_motAafficher, listeMotaTrouver, pbpendu);
+                    remiseAZero(formulaireJeuActif, txt_motAafficher, listeMotaTrouver, pbpendu, timer);
                 }
                 else if (msg == DialogResult.No)
                 {
@@ -111,10 +114,11 @@ namespace SLAM2_TP1_Pendu.Model
             }
             else if (motatrouver == motaafficher)
             {
-                msg = MessageBox.Show("Vous avez gagné !! \r\nVous avez trouvé le mot: " + motatrouver + "\r\nVoulez vous faire une autre partie ??", "You win", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
+                timer.Stop(); 
+                msg = MessageBox.Show("Vous avez gagné !! \r\nVous avez trouver en : " +timer.ToString()+" sec! \r\nVous avez trouvé le mot: " + motatrouver + "\r\nVoulez vous faire une autre partie ??", "You win", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
                 if (msg == DialogResult.Yes)
                 {
-                    remiseAZero(formulaireJeuActif, txt_motAafficher, listeMotaTrouver, pbpendu);
+                    remiseAZero(formulaireJeuActif, txt_motAafficher, listeMotaTrouver, pbpendu, timer);
                 }
                 else if (msg == DialogResult.No)
                 {
@@ -125,10 +129,11 @@ namespace SLAM2_TP1_Pendu.Model
             }
         }
 
-        public void remiseAZero(Form formulaireJeuActif, TextBox txt_motAafficher, List<String> listeMotaTrouver, PictureBox pb_pendu)
+        public void remiseAZero(Form formulaireJeuActif, TextBox txt_motAafficher, List<String> listeMotaTrouver, PictureBox pb_pendu, Timer timer)
         {
             motaafficher = "";
             motatrouver = "";
+            timer.Start();
             choisirMotATrouver(listeMotaTrouver);
             genererMotAfficher(motatrouver);
             txt_motAafficher.Text = motaafficher;
@@ -140,6 +145,21 @@ namespace SLAM2_TP1_Pendu.Model
             }
             nbEssais = 0;
             changerIMG(pb_pendu);
+        }
+
+        public void gestionTimer(TextBox txt_timer)
+        {
+            timer = new Timer();
+            timer.Interval = 1000;
+            timer.Tick += (sender, e) => Timer_Tick(sender, e, txt_timer);
+
+            timer.Start();
+        }
+
+        public void Timer_Tick(object sender, EventArgs e, TextBox txt_timer)
+        {
+            tempsPartie++;
+            txt_timer.Text = tempsPartie.ToString() + " sec";
         }
     }
 }
