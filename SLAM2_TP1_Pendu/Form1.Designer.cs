@@ -35,11 +35,12 @@
             this.lbl_prenom = new System.Windows.Forms.Label();
             this.lbl_diff = new System.Windows.Forms.Label();
             this.cb_diff = new System.Windows.Forms.ComboBox();
+            this.btn_close = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_valider
             // 
-            this.btn_valider.Location = new System.Drawing.Point(488, 471);
+            this.btn_valider.Location = new System.Drawing.Point(376, 349);
             this.btn_valider.Name = "btn_valider";
             this.btn_valider.Size = new System.Drawing.Size(75, 23);
             this.btn_valider.TabIndex = 1;
@@ -49,14 +50,14 @@
             // 
             // txt_nom
             // 
-            this.txt_nom.Location = new System.Drawing.Point(488, 97);
+            this.txt_nom.Location = new System.Drawing.Point(376, 59);
             this.txt_nom.Name = "txt_nom";
             this.txt_nom.Size = new System.Drawing.Size(163, 20);
             this.txt_nom.TabIndex = 3;
             // 
             // txt_prenom
             // 
-            this.txt_prenom.Location = new System.Drawing.Point(488, 145);
+            this.txt_prenom.Location = new System.Drawing.Point(376, 107);
             this.txt_prenom.Name = "txt_prenom";
             this.txt_prenom.Size = new System.Drawing.Size(163, 20);
             this.txt_prenom.TabIndex = 4;
@@ -64,7 +65,7 @@
             // lbl_nom
             // 
             this.lbl_nom.AutoSize = true;
-            this.lbl_nom.Location = new System.Drawing.Point(360, 97);
+            this.lbl_nom.Location = new System.Drawing.Point(286, 58);
             this.lbl_nom.Name = "lbl_nom";
             this.lbl_nom.Size = new System.Drawing.Size(35, 13);
             this.lbl_nom.TabIndex = 5;
@@ -73,7 +74,7 @@
             // lbl_prenom
             // 
             this.lbl_prenom.AutoSize = true;
-            this.lbl_prenom.Location = new System.Drawing.Point(346, 148);
+            this.lbl_prenom.Location = new System.Drawing.Point(272, 109);
             this.lbl_prenom.Name = "lbl_prenom";
             this.lbl_prenom.Size = new System.Drawing.Size(49, 13);
             this.lbl_prenom.TabIndex = 6;
@@ -82,7 +83,7 @@
             // lbl_diff
             // 
             this.lbl_diff.AutoSize = true;
-            this.lbl_diff.Location = new System.Drawing.Point(341, 294);
+            this.lbl_diff.Location = new System.Drawing.Point(267, 255);
             this.lbl_diff.Name = "lbl_diff";
             this.lbl_diff.Size = new System.Drawing.Size(54, 13);
             this.lbl_diff.TabIndex = 7;
@@ -91,18 +92,31 @@
             // cb_diff
             // 
             this.cb_diff.FormattingEnabled = true;
-            this.cb_diff.Location = new System.Drawing.Point(488, 285);
+            this.cb_diff.Location = new System.Drawing.Point(376, 247);
             this.cb_diff.Name = "cb_diff";
             this.cb_diff.Size = new System.Drawing.Size(163, 21);
             this.cb_diff.TabIndex = 8;
             this.cb_diff.SelectedIndexChanged += new System.EventHandler(this.cb_diff_SelectedIndexChanged);
+            // 
+            // btn_close
+            // 
+            this.btn_close.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.3F);
+            this.btn_close.ForeColor = System.Drawing.Color.Red;
+            this.btn_close.Location = new System.Drawing.Point(778, 12);
+            this.btn_close.Name = "btn_close";
+            this.btn_close.Size = new System.Drawing.Size(30, 30);
+            this.btn_close.TabIndex = 35;
+            this.btn_close.Text = "X";
+            this.btn_close.UseVisualStyleBackColor = true;
+            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1022, 586);
+            this.ClientSize = new System.Drawing.Size(820, 434);
+            this.Controls.Add(this.btn_close);
             this.Controls.Add(this.cb_diff);
             this.Controls.Add(this.lbl_diff);
             this.Controls.Add(this.lbl_prenom);
@@ -110,6 +124,7 @@
             this.Controls.Add(this.txt_prenom);
             this.Controls.Add(this.txt_nom);
             this.Controls.Add(this.btn_valider);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -125,6 +140,7 @@
         private System.Windows.Forms.Label lbl_prenom;
         private System.Windows.Forms.Label lbl_diff;
         private System.Windows.Forms.ComboBox cb_diff;
+        private System.Windows.Forms.Button btn_close;
     }
 }
 

@@ -149,24 +149,32 @@ namespace SLAM2_TP1_Pendu.Model
             changerIMG(pb_pendu);
         }
 
-        public void gestionTimer(TextBox txt_timer, ProgressBar progB)
+        public void gestionTimer(TextBox txt_timer, ProgressBar progB, PictureBox pb)
         {
             timer = new Timer();
             timer.Interval = 1000;
-            timer.Tick += (sender, e) => Timer_Tick(sender, e, txt_timer, progB);
+            timer.Tick += (sender, e) => Timer_Tick(sender, e, txt_timer, progB, pb);
 
             timer.Start();
         }
 
-        public void Timer_Tick(object sender, EventArgs e, TextBox txt_timer, ProgressBar progB)
+        public void Timer_Tick(object sender, EventArgs e, TextBox txt_timer, ProgressBar progB, PictureBox pb)
         {
             tempsPartie++;
             dureeCoup++;
-            progB.Value=dureeCoup;
+            progB.Increment(1);
             if (dureeCoup >= 10)
             {
+                progB.Value = 0;
                 dureeCoup = 0;
                 nbEssais++;
+                changerIMG(pb);
+                /*
+                if (nbEssais == 8)
+                {
+                    victoire(form, txt, liste, pb);
+                }
+                */
             }
             txt_timer.Text = tempsPartie.ToString() + " sec";
         }

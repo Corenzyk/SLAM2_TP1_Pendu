@@ -71,5 +71,10 @@ namespace SLAM2_TP1_Pendu
                 lbl_diff.Font = new Font(lbl_diff.Font, FontStyle.Regular);
             }
         }
+
+        private void btn_close_Click(object sender, EventArgs e)
+        {
+            ActiveForm.Close();
+        }
     }
 }
