@@ -24,7 +24,7 @@ namespace SLAM2_TP1_Pendu
             P.choisirMotATrouver(listeMotATrouver);
             P.genererMotAfficher(P.motatrouver);
             txt_afficher_mot.Text = P.motaafficher;
-            P.gestionTimer(txt_timer);
+            P.gestionTimer(txt_timer, progB_coup);
         }
 
         public Jeu()
@@ -41,10 +41,12 @@ namespace SLAM2_TP1_Pendu
 
         private void btn_Click(object sender, EventArgs e)
         {
+            progB_coup.Value = 0;
+            P.dureeCoup = 0;
             P.verification(((Button)sender).Text.ToString(), txt_afficher_mot);
             P.changerIMG(pb_pendu);
             ((Button)sender).Enabled = false;
-            P.victoire(this, txt_afficher_mot, listeMotATrouver, pb_pendu, P.timer);
+            P.victoire(this, txt_afficher_mot, listeMotATrouver, pb_pendu);
         }
     }
 }

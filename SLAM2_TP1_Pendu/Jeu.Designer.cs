@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.pan_ = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pb_pendu = new System.Windows.Forms.PictureBox();
             this.txt_afficher_prenom_nom = new System.Windows.Forms.TextBox();
@@ -60,9 +61,9 @@
             this.p = new System.Windows.Forms.Button();
             this.btn_o = new System.Windows.Forms.Button();
             this.btn_n = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.txt_timer = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.progB_coup = new System.Windows.Forms.ProgressBar();
             this.pan_.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_pendu)).BeginInit();
             this.SuspendLayout();
@@ -76,6 +77,16 @@
             this.pan_.Name = "pan_";
             this.pan_.Size = new System.Drawing.Size(193, 127);
             this.pan_.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Enabled = false;
+            this.label2.Location = new System.Drawing.Point(13, 69);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(54, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Difficulté :";
             // 
             // label1
             // 
@@ -118,7 +129,7 @@
             this.txt_afficher_mot.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.txt_afficher_mot.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_afficher_mot.Enabled = false;
-            this.txt_afficher_mot.Location = new System.Drawing.Point(77, 317);
+            this.txt_afficher_mot.Location = new System.Drawing.Point(77, 329);
             this.txt_afficher_mot.Name = "txt_afficher_mot";
             this.txt_afficher_mot.Size = new System.Drawing.Size(445, 13);
             this.txt_afficher_mot.TabIndex = 4;
@@ -384,16 +395,6 @@
             this.btn_n.UseVisualStyleBackColor = true;
             this.btn_n.Click += new System.EventHandler(this.btn_Click);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Enabled = false;
-            this.label2.Location = new System.Drawing.Point(13, 69);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Difficulté :";
-            // 
             // txt_timer
             // 
             this.txt_timer.Enabled = false;
@@ -412,12 +413,21 @@
             this.label3.TabIndex = 32;
             this.label3.Text = "Timer :";
             // 
+            // progB_coup
+            // 
+            this.progB_coup.Location = new System.Drawing.Point(77, 303);
+            this.progB_coup.Maximum = 10;
+            this.progB_coup.Name = "progB_coup";
+            this.progB_coup.Size = new System.Drawing.Size(445, 20);
+            this.progB_coup.TabIndex = 33;
+            // 
             // Jeu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.progB_coup);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txt_timer);
             this.Controls.Add(this.btn_y);
@@ -498,5 +508,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txt_timer;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ProgressBar progB_coup;
     }
 }
