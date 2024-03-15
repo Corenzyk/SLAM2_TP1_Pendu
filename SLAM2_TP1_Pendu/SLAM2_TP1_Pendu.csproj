@@ -197,5 +197,8 @@
   <ItemGroup>
     <None Include="Resources\C9.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
