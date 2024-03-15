@@ -105,6 +105,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\Mots.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,8 +198,6 @@
   <ItemGroup>
     <None Include="Resources\C9.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
