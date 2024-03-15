@@ -33,5 +33,10 @@ namespace SLAM2_TP1_Pendu
             formEnfant.BringToFront();
             formEnfant.Show();
         }
+
+        private void démarrerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Form1());
+        }
     }
 }

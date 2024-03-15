@@ -66,6 +66,7 @@
             this.démarrerToolStripMenuItem.Name = "démarrerToolStripMenuItem";
             this.démarrerToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.démarrerToolStripMenuItem.Text = "Démarrer";
+            this.démarrerToolStripMenuItem.Click += new System.EventHandler(this.démarrerToolStripMenuItem_Click);
             // 
             // scoreToolStripMenuItem
             // 
@@ -107,7 +108,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Menu";
-            this.Text = "Form2";
+            this.Text = "Menu";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

@@ -51,7 +51,7 @@ namespace SLAM2_TP1_Pendu
             if (erreur==true)
             {
                 Jeu J = new Jeu(txt_prenom.Text+" "+txt_nom.Text,cb_diff.SelectedItem.ToString());
-                J.Show();
+                J.Show(); //Modification ?
                 this.Hide();
             }
         }
