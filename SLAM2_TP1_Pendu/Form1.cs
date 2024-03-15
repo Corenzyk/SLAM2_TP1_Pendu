@@ -50,8 +50,7 @@ namespace SLAM2_TP1_Pendu
             }
             if (erreur==true)
             {
-                Jeu J = new Jeu(txt_prenom.Text+" "+txt_nom.Text,cb_diff.SelectedItem.ToString());
-                J.Show(); //Modification ?
+                (System.Windows.Forms.Application.OpenForms["Menu"] as Menu).openChildForm(new Jeu(txt_prenom.Text + " " + txt_nom.Text, cb_diff.SelectedItem.ToString()));
                 this.Hide();
             }
         }
@@ -74,7 +73,7 @@ namespace SLAM2_TP1_Pendu
 
         private void btn_close_Click(object sender, EventArgs e)
         {
-            ActiveForm.Close();
+            this.Close();
         }
     }
 }

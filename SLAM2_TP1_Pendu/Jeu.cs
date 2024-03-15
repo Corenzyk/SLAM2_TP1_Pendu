@@ -51,7 +51,7 @@ namespace SLAM2_TP1_Pendu
 
         private void btn_close_Click(object sender, EventArgs e)
         {
-            ActiveForm.Close();
+            this.Close();
         }
     }
 }
