@@ -8,6 +8,7 @@ using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SLAM2_TP1_Pendu.Model;
 
 namespace SLAM2_TP1_Pendu
 {
@@ -51,6 +52,7 @@ namespace SLAM2_TP1_Pendu
             if (erreur==true)
             {
                 (System.Windows.Forms.Application.OpenForms["Menu"] as Menu).openChildForm(new Jeu(txt_prenom.Text + " " + txt_nom.Text, cb_diff.SelectedItem.ToString()));
+                //(System.Windows.Forms.Application.OpenForms["Menu"] as Menu).pan_menu;
                 this.Hide();
             }
         }

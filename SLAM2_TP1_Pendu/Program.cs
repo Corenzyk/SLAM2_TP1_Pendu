@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SLAM2_TP1_Pendu.Model;
 
 namespace SLAM2_TP1_Pendu
 {

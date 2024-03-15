@@ -39,6 +39,7 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.pan_menu = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.donnéesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.pan_menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -68,7 +69,7 @@
             // démarrerToolStripMenuItem
             // 
             this.démarrerToolStripMenuItem.Name = "démarrerToolStripMenuItem";
-            this.démarrerToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.démarrerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.démarrerToolStripMenuItem.Text = "Démarrer";
             this.démarrerToolStripMenuItem.Click += new System.EventHandler(this.démarrerToolStripMenuItem_Click);
             // 
@@ -80,6 +81,8 @@
             // 
             // paramètresToolStripMenuItem
             // 
+            this.paramètresToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.donnéesToolStripMenuItem});
             this.paramètresToolStripMenuItem.Name = "paramètresToolStripMenuItem";
             this.paramètresToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
             this.paramètresToolStripMenuItem.Text = "Paramètres";
@@ -107,11 +110,17 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.ImageLocation = "";
-            this.pictureBox1.Location = new System.Drawing.Point(178, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(162, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(513, 470);
+            this.pictureBox1.Size = new System.Drawing.Size(512, 473);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // donnéesToolStripMenuItem
+            // 
+            this.donnéesToolStripMenuItem.Name = "donnéesToolStripMenuItem";
+            this.donnéesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.donnéesToolStripMenuItem.Text = "Données";
             // 
             // Menu
             // 
@@ -142,7 +151,8 @@
         private System.Windows.Forms.ToolStripMenuItem scoreToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem paramètresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-        private System.Windows.Forms.Panel pan_menu;
         private System.Windows.Forms.PictureBox pictureBox1;
+        public System.Windows.Forms.Panel pan_menu;
+        private System.Windows.Forms.ToolStripMenuItem donnéesToolStripMenuItem;
     }
 }
