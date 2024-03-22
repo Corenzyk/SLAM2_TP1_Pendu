@@ -18,23 +18,6 @@ namespace SLAM2_TP1_Pendu
             InitializeComponent();
         }
 
-        public Form activeForm = null;
-
-        public void openChildForm(Form formEnfant)
-        {
-            if (activeForm != null)
-                activeForm.Close();
-
-            activeForm = formEnfant;
-            formEnfant.TopLevel = false;
-            formEnfant.FormBorderStyle = FormBorderStyle.None;
-            formEnfant.Dock = DockStyle.Fill;
-            pan_menu.Controls.Add(formEnfant);
-            pan_menu.Tag = formEnfant;
-            formEnfant.BringToFront();
-            formEnfant.Show();
-        }
-
         private void démarrerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SousFormulaire SF = new SousFormulaire(pan_menu);

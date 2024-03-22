@@ -108,8 +108,6 @@ namespace SLAM2_TP1_Pendu.Model
                 }
                 else if (msg == DialogResult.No)
                 {
-                    Form1 Accueil = new Form1();
-                    Accueil.Show();
                     formulaireJeuActif.Hide();
                 }
             }

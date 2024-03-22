@@ -51,8 +51,8 @@ namespace SLAM2_TP1_Pendu
             }
             if (erreur==true)
             {
-                (System.Windows.Forms.Application.OpenForms["Menu"] as Menu).openChildForm(new Jeu(txt_prenom.Text + " " + txt_nom.Text, cb_diff.SelectedItem.ToString()));
-                //(System.Windows.Forms.Application.OpenForms["Menu"] as Menu).pan_menu;
+                SousFormulaire SF = new SousFormulaire((System.Windows.Forms.Application.OpenForms["Menu"] as Menu).pan_menu);
+                SF.openChildForm(new Jeu(txt_prenom.Text + " " + txt_nom.Text, cb_diff.SelectedItem.ToString()));
                 this.Hide();
             }
         }
