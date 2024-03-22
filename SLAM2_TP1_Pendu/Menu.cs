@@ -13,21 +13,22 @@ namespace SLAM2_TP1_Pendu
 {
     public partial class Menu : Form
     {
+        public SousFormulaire SF;
+
         public Menu()
         {
             InitializeComponent();
+            SF = new SousFormulaire(pan_menu);
         }
 
         private void démarrerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SousFormulaire SFF = new SousFormulaire(pan_menu);
-            SFF.openChildForm(new Form1());
+            SF.openChildForm(new Form1());
         }
 
-        private void donnéesToolStripMenuItem_Click(object sender, EventArgs e)
+        private void donnéesToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            SousFormulaire SFD = new SousFormulaire(pan_menu);
-            SFD.openChildForm(new Donnees());
+            SF.openChildForm(new Donnees());
         }
     }
 }

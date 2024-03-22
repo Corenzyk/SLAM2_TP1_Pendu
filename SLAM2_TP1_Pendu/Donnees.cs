@@ -18,7 +18,7 @@ namespace SLAM2_TP1_Pendu
             InitializeComponent();
         }
 
-        private void btn_close_Click(object sender, EventArgs e)
+        private void btn_close_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }

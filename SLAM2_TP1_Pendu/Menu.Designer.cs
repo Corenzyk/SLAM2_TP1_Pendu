@@ -92,6 +92,7 @@
             this.donnéesToolStripMenuItem.Name = "donnéesToolStripMenuItem";
             this.donnéesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.donnéesToolStripMenuItem.Text = "Données";
+            this.donnéesToolStripMenuItem.Click += new System.EventHandler(this.donnéesToolStripMenuItem_Click_1);
             // 
             // toolStripMenuItem1
             // 
