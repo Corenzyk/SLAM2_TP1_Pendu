@@ -10,22 +10,21 @@ using SLAM2_TP1_Pendu.Model;
 
 namespace SLAM2_TP1_Pendu.Controllers
 {
-    internal class Mots
+    public class Mots
     {
         private DataTable dtListeMots;
 
-        /*public DataTable GetListeMots()
+        public DataTable GetListeMots()
         {
             DataTable dtLisMots = new DataTable();
-            Connection conn = new Connection();
+            Connexion conn = new Connexion();
             try
             {
-                using (MySqlCommand cmd = new MySqlCommand(" Ici ecrire la requête SQL permetant d’afficher la liste des mots ainsi que la difficulté", conn.connection))
+                using (MySqlCommand cmd = new MySqlCommand("SELECT LABELMOTS AS Mots, LABELDIFFICULTE AS Difficulte FROM mots INNER JOIN difficulte diff ON mots.IDDIFFICULTE=diff.IDDIFFICULTE;", conn.Connection))
                 {
-                    conn.connection.Open();
+                    conn.Connection.Open();
                     MySqlDataReader reader = cmd.ExecuteReader();
                     dtListeMots.Load(reader);
-
                 }
             }
             catch (Exception e)
@@ -33,6 +32,8 @@ namespace SLAM2_TP1_Pendu.Controllers
                 MessageBox.Show(e.ToString(), "Erreur 3", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign, true);
             }
             return dtListeMots;
-        }*/
+        }
+
+
     }
 }
