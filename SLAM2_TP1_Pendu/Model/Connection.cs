@@ -20,7 +20,7 @@ namespace SLAM2_TP1_Pendu.Model
         private void Initialise()
         {
             server = "localhost";
-            database = "kuczyk_corentin_PENDU";
+            database = "kuczyk_corentin_BDD_pendu";
             uid = "root";
             password = "";
             string connectionString;
