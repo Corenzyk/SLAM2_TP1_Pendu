@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace SLAM2_TP1_Pendu.Model
 {
-    internal class Connexion
+    internal class Connection
     {
         private MySqlConnection connection;
         private string server;
@@ -20,7 +20,7 @@ namespace SLAM2_TP1_Pendu.Model
         private void Initialise()
         {
             server = "localhost";
-            database = "bdd_pendu";
+            database = "kuczyk_corentin_PENDU";
             uid = "root";
             password = "";
             string connectionString;
@@ -30,9 +30,9 @@ namespace SLAM2_TP1_Pendu.Model
             connection = new MySqlConnection(connectionString);
         }
 
-        public Connexion() 
+        public Connection() 
         {
-            this.Initialise();
+            Initialise();
         }
     }
 }

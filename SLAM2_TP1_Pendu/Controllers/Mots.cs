@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
+using SLAM2_TP1_Pendu.Model;
 
 namespace SLAM2_TP1_Pendu.Controllers
 {
@@ -14,8 +16,8 @@ namespace SLAM2_TP1_Pendu.Controllers
 
         /*public DataTable GetListeMots()
         {
-            //Instencier l’objet dtListeMots de type DataTable
-            //Connection conn = new Connection 
+            DataTable dtLisMots = new DataTable();
+            Connection conn = new Connection();
             try
             {
                 using (MySqlCommand cmd = new MySqlCommand(" Ici ecrire la requête SQL permetant d’afficher la liste des mots ainsi que la difficulté", conn.connection))

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SLAM2_TP1_Pendu.Model;
 
 namespace SLAM2_TP1_Pendu
 {

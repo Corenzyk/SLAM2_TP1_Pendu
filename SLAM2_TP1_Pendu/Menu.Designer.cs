@@ -35,11 +35,11 @@
             this.démarrerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.scoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.paramètresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.donnéesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.pan_menu = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.donnéesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.pan_menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -69,7 +69,7 @@
             // démarrerToolStripMenuItem
             // 
             this.démarrerToolStripMenuItem.Name = "démarrerToolStripMenuItem";
-            this.démarrerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.démarrerToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.démarrerToolStripMenuItem.Text = "Démarrer";
             this.démarrerToolStripMenuItem.Click += new System.EventHandler(this.démarrerToolStripMenuItem_Click);
             // 
@@ -86,6 +86,12 @@
             this.paramètresToolStripMenuItem.Name = "paramètresToolStripMenuItem";
             this.paramètresToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
             this.paramètresToolStripMenuItem.Text = "Paramètres";
+            // 
+            // donnéesToolStripMenuItem
+            // 
+            this.donnéesToolStripMenuItem.Name = "donnéesToolStripMenuItem";
+            this.donnéesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.donnéesToolStripMenuItem.Text = "Données";
             // 
             // toolStripMenuItem1
             // 
@@ -115,12 +121,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(512, 473);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            // 
-            // donnéesToolStripMenuItem
-            // 
-            this.donnéesToolStripMenuItem.Name = "donnéesToolStripMenuItem";
-            this.donnéesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.donnéesToolStripMenuItem.Text = "Données";
             // 
             // Menu
             // 

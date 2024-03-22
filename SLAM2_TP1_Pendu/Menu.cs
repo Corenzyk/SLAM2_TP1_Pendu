@@ -20,14 +20,14 @@ namespace SLAM2_TP1_Pendu
 
         private void démarrerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SousFormulaire SF = new SousFormulaire(pan_menu);
-            SF.openChildForm(new Form1());
+            SousFormulaire SFF = new SousFormulaire(pan_menu);
+            SFF.openChildForm(new Form1());
         }
 
         private void donnéesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SousFormulaire SF = new SousFormulaire(pan_menu);
-            SF.openChildForm(new Donnees());
+            SousFormulaire SFD = new SousFormulaire(pan_menu);
+            SFD.openChildForm(new Donnees());
         }
     }
 }
