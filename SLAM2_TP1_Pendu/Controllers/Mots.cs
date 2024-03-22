@@ -14,7 +14,7 @@ namespace SLAM2_TP1_Pendu.Controllers
     {
         private DataTable dtListeMots;
 
-        public DataTable GetListeMots()
+        /*public DataTable GetListeMots()
         {
             DataTable dtLisMots = new DataTable();
             Connection conn = new Connection();
@@ -33,6 +33,6 @@ namespace SLAM2_TP1_Pendu.Controllers
                 MessageBox.Show(e.ToString(), "Erreur 3", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign, true);
             }
             return dtListeMots;
-        }
+        }*/
     }
 }
