@@ -30,6 +30,10 @@
         {
             this.btn_close = new System.Windows.Forms.Button();
             this.dgv_Mots = new System.Windows.Forms.DataGridView();
+            this.cb_RechercheDiff = new System.Windows.Forms.ComboBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Mots)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,10 +52,43 @@
             // dgv_Mots
             // 
             this.dgv_Mots.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_Mots.Location = new System.Drawing.Point(61, 31);
+            this.dgv_Mots.Location = new System.Drawing.Point(55, 111);
             this.dgv_Mots.Name = "dgv_Mots";
-            this.dgv_Mots.Size = new System.Drawing.Size(475, 402);
+            this.dgv_Mots.Size = new System.Drawing.Size(475, 337);
             this.dgv_Mots.TabIndex = 0;
+            // 
+            // cb_RechercheDiff
+            // 
+            this.cb_RechercheDiff.FormattingEnabled = true;
+            this.cb_RechercheDiff.Location = new System.Drawing.Point(260, 67);
+            this.cb_RechercheDiff.Name = "cb_RechercheDiff";
+            this.cb_RechercheDiff.Size = new System.Drawing.Size(270, 21);
+            this.cb_RechercheDiff.TabIndex = 37;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(260, 29);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(270, 20);
+            this.textBox1.TabIndex = 38;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(52, 32);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(101, 13);
+            this.label1.TabIndex = 39;
+            this.label1.Text = "Recherche un mot :";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(52, 70);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(132, 13);
+            this.label2.TabIndex = 40;
+            this.label2.Text = "Rechercher une difficulté :";
             // 
             // Donnees
             // 
@@ -59,6 +96,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(836, 473);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.cb_RechercheDiff);
             this.Controls.Add(this.btn_close);
             this.Controls.Add(this.dgv_Mots);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -66,11 +107,16 @@
             this.Text = "Donnes";
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Mots)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
         private System.Windows.Forms.Button btn_close;
         private System.Windows.Forms.DataGridView dgv_Mots;
+        private System.Windows.Forms.ComboBox cb_RechercheDiff;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
