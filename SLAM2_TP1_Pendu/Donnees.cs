@@ -15,7 +15,7 @@ namespace SLAM2_TP1_Pendu
     public partial class Donnees : Form
     {
         private DataView dv;
-        private DataGridView dgv_Mots;
+        
         private Mots dt_mot;
         public Donnees()
         {
@@ -24,7 +24,8 @@ namespace SLAM2_TP1_Pendu
             dv = new DataView(dt_mot.GetListeMots());
             dgv_Mots.DataSource = dv;
             dgv_Mots.Columns["IDMOTS"].Visible = false;
-            dgv_Mots.Columns["Mots"].Width = 190;
+            dgv_Mots.Columns["IDDIFFICULTE"].Visible = false;
+            dgv_Mots.Columns["Mots"].Width = 200;
 
         }
 

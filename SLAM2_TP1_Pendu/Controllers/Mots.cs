@@ -13,14 +13,15 @@ namespace SLAM2_TP1_Pendu.Controllers
     public class Mots
     {
         private DataTable dtListeMots;
+        private Connexion conn;
 
         public DataTable GetListeMots()
         {
-            DataTable dtLisMots = new DataTable();
-            Connexion conn = new Connexion();
+            dtListeMots = new DataTable();
+            conn = new Connexion();
             try
             {
-                using (MySqlCommand cmd = new MySqlCommand("SELECT LABELMOTS AS Mots, LABELDIFFICULTE AS Difficulte FROM mots INNER JOIN difficulte diff ON mots.IDDIFFICULTE=diff.IDDIFFICULTE;", conn.Connection))
+                using (MySqlCommand cmd = new MySqlCommand("SELECT IDMOTS, LABELMOTS AS Mots, mots.IDDIFFICULTE, LABELDIFFICULTE AS Difficulte FROM mots INNER JOIN difficulte diff ON mots.IDDIFFICULTE=diff.IDDIFFICULTE;", conn.Connection))
                 {
                     conn.Connection.Open();
                     MySqlDataReader reader = cmd.ExecuteReader();

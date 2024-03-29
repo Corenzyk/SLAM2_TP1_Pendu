@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.btn_close = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dgv_Mots = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Mots)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_close
@@ -45,13 +45,13 @@
             this.btn_close.UseVisualStyleBackColor = true;
             this.btn_close.Click += new System.EventHandler(this.btn_close_Click_1);
             // 
-            // dataGridView1
+            // dgv_Mots
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(61, 31);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(475, 402);
-            this.dataGridView1.TabIndex = 0;
+            this.dgv_Mots.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Mots.Location = new System.Drawing.Point(61, 31);
+            this.dgv_Mots.Name = "dgv_Mots";
+            this.dgv_Mots.Size = new System.Drawing.Size(475, 402);
+            this.dgv_Mots.TabIndex = 0;
             // 
             // Donnees
             // 
@@ -60,17 +60,17 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(836, 473);
             this.Controls.Add(this.btn_close);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgv_Mots);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Donnees";
             this.Text = "Donnes";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Mots)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.Button btn_close;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgv_Mots;
     }
 }
