@@ -74,7 +74,7 @@
             // lbl_prenom
             // 
             this.lbl_prenom.AutoSize = true;
-            this.lbl_prenom.Location = new System.Drawing.Point(272, 109);
+            this.lbl_prenom.Location = new System.Drawing.Point(272, 110);
             this.lbl_prenom.Name = "lbl_prenom";
             this.lbl_prenom.Size = new System.Drawing.Size(49, 13);
             this.lbl_prenom.TabIndex = 6;
@@ -92,7 +92,7 @@
             // cb_diff
             // 
             this.cb_diff.FormattingEnabled = true;
-            this.cb_diff.Location = new System.Drawing.Point(376, 247);
+            this.cb_diff.Location = new System.Drawing.Point(376, 252);
             this.cb_diff.Name = "cb_diff";
             this.cb_diff.Size = new System.Drawing.Size(163, 21);
             this.cb_diff.TabIndex = 8;
