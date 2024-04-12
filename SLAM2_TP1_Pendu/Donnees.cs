@@ -42,14 +42,33 @@ namespace SLAM2_TP1_Pendu
 
         private void cb_RechercheDiff_SelectedIndexChanged(object sender, EventArgs e)
         {
-            /*dv = new DataView(dt_mot.GetListeMotsdifficult(txt_RechercheMots.Text, cb_RechercheDiff.SelectedValue.ToString()));
-            dgv_Mots.DataSource = dv;*/
+          
         }
 
         private void txt_RechercheMots_TextChanged(object sender, EventArgs e)
         {
-            /*dv = new DataView(dt_mot.GetListeMotsdifficult(txt_RechercheMots.Text, cb_RechercheDiff.SelectedValue.ToString()));
-            dgv_Mots.DataSource = dv;*/
+            refresh(txt_RechercheMots.Text,cb_RechercheDiff.SelectedValue.ToString());
+            
         }
+
+        private void cb_RechercheDiff_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            refresh(txt_RechercheMots.Text, cb_RechercheDiff.SelectedValue.ToString());
+
+        }
+
+        public void refresh(string mot, string diff)
+        {
+            dv = new DataView(dt_mot.GetListeMotsdifficult(mot, Convert.ToInt32(diff)));
+            dt_difficulte = new Difficulte();
+            dgv_Mots.DataSource = dv;
+            dgv_Mots.Columns["IDMOTS"].Visible = false;
+            dgv_Mots.Columns["IDDIFFICULTE"].Visible = false;
+            dgv_Mots.Columns["Mots"].Width = 200;
+            
+
+
+        }
+
     }
 }

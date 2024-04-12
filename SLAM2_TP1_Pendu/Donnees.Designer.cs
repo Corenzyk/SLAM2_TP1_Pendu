@@ -65,6 +65,7 @@
             this.cb_RechercheDiff.Size = new System.Drawing.Size(270, 21);
             this.cb_RechercheDiff.TabIndex = 37;
             this.cb_RechercheDiff.SelectedIndexChanged += new System.EventHandler(this.cb_RechercheDiff_SelectedIndexChanged);
+            this.cb_RechercheDiff.SelectionChangeCommitted += new System.EventHandler(this.cb_RechercheDiff_SelectionChangeCommitted);
             // 
             // txt_RechercheMots
             // 

@@ -28,26 +28,18 @@ namespace SLAM2_TP1_Pendu
         
         public void button1_Click(object sender, EventArgs e)
         {
-            string result1 = "";
-            string result2 = "";
             bool erreur = true;
-            if (txt_prenom.Text != "")
-                result1 += txt_prenom.Text + " ";
-            else
+            if (txt_prenom.Text == "")
             {
                 MessageBox.Show("Aucun prénom n'est rentré", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 erreur = false;
             }
-            if (txt_nom.Text != "")
-                result1 += txt_nom.Text;
-            else
+            if (txt_nom.Text == "")
             {
                 MessageBox.Show("Aucun nom n'est rentré", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 erreur = false;
             }
-            if (cb_diff.SelectedValue > -1)
-                result2 = "La difficultés sélectionnée est:" + cb_diff.SelectedValue.ToString();
-            else
+            if (cb_diff.SelectedValue.ToString() == "-1")
             {
                 MessageBox.Show("Aucun difficulté n'est choisie", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 erreur = false;
@@ -55,7 +47,7 @@ namespace SLAM2_TP1_Pendu
             if (erreur==true)
             {
                 SousFormulaire SF = new SousFormulaire((System.Windows.Forms.Application.OpenForms["Menu"] as Menu).pan_menu);
-                SF.openChildForm(new Jeu(txt_prenom.Text + " " + txt_nom.Text, cb_diff.SelectedItem.ToString()));
+                SF.openChildForm(new Jeu(txt_prenom.Text + " " + txt_nom.Text, dt_difficulte.GetDiff(Convert.ToInt32(cb_diff.SelectedValue.ToString()))));
                 this.Hide();
             }
         }

@@ -39,5 +39,28 @@ namespace SLAM2_TP1_Pendu.Controllers
             dtListeDifficulte.Rows.InsertAt(workRow, 0);
             return dtListeDifficulte;
         }
+
+        public string GetDiff(int idDiff)
+        {
+            DataTable temp = new DataTable();
+            string diff = "";
+            conn = new Connexion();
+            try
+            {
+                using (MySqlCommand cmd = new MySqlCommand("SELECT LABELDIFFICULTE FROM difficulte WHERE IDDIFFICULTE="+idDiff+";", conn.Connection))
+                {
+                    conn.Connection.Open();
+                    MySqlDataReader reader = cmd.ExecuteReader();
+                    temp.Load(reader);
+                    diff = temp.ToString();
+                    conn = null;
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString(), "Erreur 3", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign, true);
+            }
+            return diff;
+        }
     }
 }

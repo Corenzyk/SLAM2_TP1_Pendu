@@ -37,11 +37,28 @@ namespace SLAM2_TP1_Pendu.Controllers
 
         public DataTable GetListeMotsdifficult(string extMot, int idDiff)
         {
-            if (extMot != "" && idDiff > 0)
+            string rqtSql = "SELECT IDMOTS, LABELMOTS AS Mots, mots.IDDIFFICULTE, LABELDIFFICULTE AS Difficulte FROM mots INNER JOIN difficulte diff ON mots.IDDIFFICULTE=diff.IDDIFFICULTE ";
+            if (extMot != "" || idDiff > -1)
             {
-                string rqtSql = "SELECT IDMOTS, LABELMOTS AS Mots, IDDIFFICULTE, LABELDIFFICULTE AS Difficulte FROM mots WHERE Difficulte = " + idDiff + " AND MOTS LIKE \"%" + extMot + "%\";";
-                dtListeMots = new DataTable();
-                conn = new Connexion();
+                rqtSql += "WHERE ";
+                if (extMot != "")
+                {
+                    rqtSql += "LABELMOTS LIKE \"%" + extMot + "%\" ";
+                }
+                if (idDiff > -1)
+                {
+                    if (extMot != "")
+                    {
+                        rqtSql += "AND ";
+                    }
+                    rqtSql += " mots.IDDIFFICULTE = " + idDiff;
+                }
+                
+            }
+            rqtSql += " ;";
+
+            dtListeMots = new DataTable();
+            conn = new Connexion();
                 try
                 {
                     Connexion conn = new Connexion();
@@ -58,28 +75,8 @@ namespace SLAM2_TP1_Pendu.Controllers
                     MessageBox.Show(e.ToString(), "Erreur 3", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign, true);
                 }
                 return dtListeMots;
-            }
-            else
-            {
-                dtListeMots = new DataTable();
-                conn = new Connexion();
-                try
-                {
-                    Connexion conn = new Connexion();
-                    using (MySqlCommand cmd = new MySqlCommand("SELECT IDMOTS, LABELMOTS AS Mots, mots.IDDIFFICULTE, LABELDIFFICULTE AS Difficulte FROM mots INNER JOIN difficulte diff ON mots.IDDIFFICULTE=diff.IDDIFFICULTE;", conn.Connection))
-                    {
-                        conn.Connection.Open();
-                        MySqlDataReader reader = cmd.ExecuteReader();
-                        dtListeMots.Load(reader);
-                        conn = null;
-                    }
-                }
-                catch (Exception e)
-                {
-                    MessageBox.Show(e.ToString(), "Erreur 3", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign, true);
-                }
-                return dtListeMots;
-            }
+            
+           
         }
     }
 }
