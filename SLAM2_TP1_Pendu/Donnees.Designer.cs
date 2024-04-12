@@ -31,7 +31,7 @@
             this.btn_close = new System.Windows.Forms.Button();
             this.dgv_Mots = new System.Windows.Forms.DataGridView();
             this.cb_RechercheDiff = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_RechercheMots = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Mots)).BeginInit();
@@ -64,13 +64,15 @@
             this.cb_RechercheDiff.Name = "cb_RechercheDiff";
             this.cb_RechercheDiff.Size = new System.Drawing.Size(270, 21);
             this.cb_RechercheDiff.TabIndex = 37;
+            this.cb_RechercheDiff.SelectedIndexChanged += new System.EventHandler(this.cb_RechercheDiff_SelectedIndexChanged);
             // 
-            // textBox1
+            // txt_RechercheMots
             // 
-            this.textBox1.Location = new System.Drawing.Point(260, 29);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(270, 20);
-            this.textBox1.TabIndex = 38;
+            this.txt_RechercheMots.Location = new System.Drawing.Point(260, 29);
+            this.txt_RechercheMots.Name = "txt_RechercheMots";
+            this.txt_RechercheMots.Size = new System.Drawing.Size(270, 20);
+            this.txt_RechercheMots.TabIndex = 38;
+            this.txt_RechercheMots.TextChanged += new System.EventHandler(this.txt_RechercheMots_TextChanged);
             // 
             // label1
             // 
@@ -98,7 +100,7 @@
             this.ClientSize = new System.Drawing.Size(836, 473);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_RechercheMots);
             this.Controls.Add(this.cb_RechercheDiff);
             this.Controls.Add(this.btn_close);
             this.Controls.Add(this.dgv_Mots);
@@ -115,7 +117,7 @@
         private System.Windows.Forms.Button btn_close;
         private System.Windows.Forms.DataGridView dgv_Mots;
         private System.Windows.Forms.ComboBox cb_RechercheDiff;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_RechercheMots;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
     }

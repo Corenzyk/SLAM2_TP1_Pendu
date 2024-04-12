@@ -18,6 +18,7 @@ namespace SLAM2_TP1_Pendu
         
         private Mots dt_mot;
         private Difficulte dt_difficulte;
+
         public Donnees()
         {
             InitializeComponent();
@@ -37,6 +38,18 @@ namespace SLAM2_TP1_Pendu
         private void btn_close_Click_1(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void cb_RechercheDiff_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            /*dv = new DataView(dt_mot.GetListeMotsdifficult(txt_RechercheMots.Text, cb_RechercheDiff.SelectedValue.ToString()));
+            dgv_Mots.DataSource = dv;*/
+        }
+
+        private void txt_RechercheMots_TextChanged(object sender, EventArgs e)
+        {
+            /*dv = new DataView(dt_mot.GetListeMotsdifficult(txt_RechercheMots.Text, cb_RechercheDiff.SelectedValue.ToString()));
+            dgv_Mots.DataSource = dv;*/
         }
     }
 }

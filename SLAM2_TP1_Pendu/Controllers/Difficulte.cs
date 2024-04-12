@@ -14,6 +14,7 @@ namespace SLAM2_TP1_Pendu.Controllers
     {
         private DataTable dtListeDifficulte;
         private Connexion conn;
+        private DataTable dtListeMots;
         public DataTable GetListeDifficulte()
         {
             dtListeDifficulte = new DataTable();
@@ -25,6 +26,7 @@ namespace SLAM2_TP1_Pendu.Controllers
                     conn.Connection.Open();
                     MySqlDataReader reader = cmd.ExecuteReader();
                     dtListeDifficulte.Load(reader);
+                    conn = null;
                 }
             }
             catch (Exception e)

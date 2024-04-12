@@ -8,19 +8,22 @@ using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SLAM2_TP1_Pendu.Controllers;
 using SLAM2_TP1_Pendu.Model;
 
 namespace SLAM2_TP1_Pendu
 {
     public partial class Form1 : Form
     {
+        private Difficulte dt_difficulte;
+
         public Form1()
         {
             InitializeComponent();
-            cb_diff.Items.Add("Facile");
-            cb_diff.Items.Add("Moyen");
-            cb_diff.Items.Add("Difficile");
-            cb_diff.Items.Add("Enfer");
+            dt_difficulte = new Difficulte();
+            cb_diff.DataSource = dt_difficulte.GetListeDifficulte();
+            cb_diff.DisplayMember = "LABELDIFFICULTE"; //nom de l’alias SQL
+            cb_diff.ValueMember = "IDDIFFICULTE"; //nom de l’alias SQL
         }
         
         public void button1_Click(object sender, EventArgs e)
@@ -42,8 +45,8 @@ namespace SLAM2_TP1_Pendu
                 MessageBox.Show("Aucun nom n'est rentré", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 erreur = false;
             }
-            if (cb_diff.SelectedIndex > -1)
-                result2 = "La difficultés sélectionnée est:" + cb_diff.SelectedItem.ToString();
+            if (cb_diff.SelectedValue > -1)
+                result2 = "La difficultés sélectionnée est:" + cb_diff.SelectedValue.ToString();
             else
             {
                 MessageBox.Show("Aucun difficulté n'est choisie", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -59,7 +62,7 @@ namespace SLAM2_TP1_Pendu
         
         public void cb_diff_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cb_diff.SelectedItem.ToString() == "Enfer"){
+            if (cb_diff.SelectedValue.ToString() == "4") { 
                 this.BackColor = Color.Red;
                 lbl_nom.Font = new Font(lbl_nom.Font, FontStyle.Bold);
                 lbl_prenom.Font = new Font(lbl_prenom.Font, FontStyle.Bold);

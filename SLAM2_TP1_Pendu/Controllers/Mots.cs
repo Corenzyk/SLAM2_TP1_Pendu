@@ -35,11 +35,11 @@ namespace SLAM2_TP1_Pendu.Controllers
             return dtListeMots;
         }
 
-        public DataTable GetListeMotsDiff(string libDiff, int idDiff)
+        public DataTable GetListeMotsdifficult(string extMot, int idDiff)
         {
-            if (libDiff != "" && idDiff > 0)
+            if (extMot != "" && idDiff > 0)
             {
-                string rqtSql = "SELECT IDMOTS, LABELMOTS AS Mots, mots.IDDIFFICULTE, LABELDIFFICULTE AS Difficulte FROM mots INNER JOIN difficulte diff ON mots.IDDIFFICULTE=diff.IDDIFFICULTE WHERE diff.IDDIFFICULTE = " + idDiff + " AND LABELDIFFICULTE = " + libDiff + ";";
+                string rqtSql = "SELECT IDMOTS, LABELMOTS AS Mots, IDDIFFICULTE, LABELDIFFICULTE AS Difficulte FROM mots WHERE Difficulte = " + idDiff + " AND MOTS LIKE \"%" + extMot + "%\";";
                 dtListeMots = new DataTable();
                 conn = new Connexion();
                 try
@@ -50,7 +50,7 @@ namespace SLAM2_TP1_Pendu.Controllers
                         conn.Connection.Open();
                         MySqlDataReader reader = cmd.ExecuteReader();
                         dtListeMots.Load(reader);
-
+                        conn = null;
                     }
                 }
                 catch (Exception e)
@@ -71,6 +71,7 @@ namespace SLAM2_TP1_Pendu.Controllers
                         conn.Connection.Open();
                         MySqlDataReader reader = cmd.ExecuteReader();
                         dtListeMots.Load(reader);
+                        conn = null;
                     }
                 }
                 catch (Exception e)
