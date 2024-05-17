@@ -17,6 +17,7 @@ namespace SLAM2_TP1_Pendu
     {
         private Difficulte dt_difficulte;
 
+        #region Constructeur Form1
         public Form1()
         {
             InitializeComponent();
@@ -25,8 +26,35 @@ namespace SLAM2_TP1_Pendu
             cb_diff.DisplayMember = "LABELDIFFICULTE"; //nom de l’alias SQL
             cb_diff.ValueMember = "IDDIFFICULTE"; //nom de l’alias SQL
         }
-        
-        public void button1_Click(object sender, EventArgs e)
+        #endregion
+
+        #region Affichage rouge si difficulte
+        public void cb_diff_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cb_diff.SelectedValue.ToString() == "4") { 
+                this.BackColor = Color.Red;
+                lbl_nom.Font = new Font(lbl_nom.Font, FontStyle.Bold);
+                lbl_prenom.Font = new Font(lbl_prenom.Font, FontStyle.Bold);
+                lbl_diff.Font = new Font(lbl_diff.Font, FontStyle.Bold);
+            }
+            else{
+                this.BackColor = Color.FromArgb(153, 180, 209);
+                lbl_nom.Font = new Font(lbl_nom.Font, FontStyle.Regular);
+                lbl_prenom.Font = new Font(lbl_prenom.Font, FontStyle.Regular);
+                lbl_diff.Font = new Font(lbl_diff.Font, FontStyle.Regular);
+            }
+        }
+        #endregion
+
+        #region Fermeture Form1
+        private void btn_close_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        #endregion
+
+        #region Valider info
+        private void btn_valider_Click(object sender, EventArgs e)
         {
             bool erreur = true;
             if (txt_prenom.Text == "")
@@ -44,33 +72,13 @@ namespace SLAM2_TP1_Pendu
                 MessageBox.Show("Aucun difficulté n'est choisie", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 erreur = false;
             }
-            if (erreur==true)
+            if (erreur == true)
             {
                 SousFormulaire SF = new SousFormulaire((System.Windows.Forms.Application.OpenForms["Menu"] as Menu).pan_menu);
-                SF.openChildForm(new Jeu(txt_prenom.Text + " " + txt_nom.Text, dt_difficulte.GetDiff(cb_diff.SelectedIndex)));
+                SF.openChildForm(new Jeu(txt_prenom.Text + " " + txt_nom.Text, cb_diff.SelectedIndex));
                 this.Hide();
             }
         }
-        
-        public void cb_diff_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cb_diff.SelectedValue.ToString() == "4") { 
-                this.BackColor = Color.Red;
-                lbl_nom.Font = new Font(lbl_nom.Font, FontStyle.Bold);
-                lbl_prenom.Font = new Font(lbl_prenom.Font, FontStyle.Bold);
-                lbl_diff.Font = new Font(lbl_diff.Font, FontStyle.Bold);
-            }
-            else{
-                this.BackColor = Color.FromArgb(153, 180, 209);
-                lbl_nom.Font = new Font(lbl_nom.Font, FontStyle.Regular);
-                lbl_prenom.Font = new Font(lbl_prenom.Font, FontStyle.Regular);
-                lbl_diff.Font = new Font(lbl_diff.Font, FontStyle.Regular);
-            }
-        }
-
-        private void btn_close_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+        #endregion
     }
 }

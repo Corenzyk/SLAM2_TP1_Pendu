@@ -8,37 +8,35 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SLAM2_TP1_Pendu.Controllers;
 
 namespace SLAM2_TP1_Pendu
 {
     public partial class Jeu : Form
     {
         Partie P;
+        Mots M;
+        Difficulte D;
         List<string> listeMotATrouver;
 
-        private void Init()
+        #region Constructeur jeu
+        public Jeu(string nomPrenomJoueur, int difficultePartie)
         {
             P = new Partie();
+            M = new Mots();
+            D = new Difficulte();
             InitializeComponent();
-            listeMotATrouver = new List<string> { "Francophile", "Chlorophylle", "Conspirateur", "Qualification", "Attraction", "Cornemuse", "Tourisme", "Diapason", "Brouhaha" };
+            txt_afficher_prenom_nom.Text = nomPrenomJoueur;
+            txt_afficher_diff.Text = D.GetDiff(difficultePartie);
+            listeMotATrouver = M.GetListeMotsByDiff(difficultePartie);
             P.choisirMotATrouver(listeMotATrouver);
             P.genererMotAfficher(P.motatrouver);
             txt_afficher_mot.Text = P.motaafficher;
             P.gestionTimer(txt_timer, progB_coup, this, pb_pendu, txt_afficher_mot, listeMotATrouver);
         }
+        #endregion
 
-        public Jeu()
-        {
-            Init();
-        }
-
-        public Jeu(string nomPrenomJoueur, string difficultePartie)
-        {
-            Init();
-            txt_afficher_prenom_nom.Text = nomPrenomJoueur;
-            txt_afficher_diff.Text = difficultePartie;
-        }
-
+        #region Bouton lettre
         private void btn_Click(object sender, EventArgs e)
         {
             progB_coup.Value = 0;
@@ -48,10 +46,13 @@ namespace SLAM2_TP1_Pendu
             ((Button)sender).Enabled = false;
             P.victoire(this, txt_afficher_mot, listeMotATrouver, pb_pendu);
         }
+        #endregion
 
+        #region Fermeture form jeu
         private void btn_close_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+        #endregion
     }
 }

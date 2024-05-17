@@ -46,7 +46,7 @@
             this.btn_valider.TabIndex = 1;
             this.btn_valider.Text = "Valider";
             this.btn_valider.UseVisualStyleBackColor = true;
-            this.btn_valider.Click += new System.EventHandler(this.button1_Click);
+            this.btn_valider.Click += new System.EventHandler(this.btn_valider_Click);
             // 
             // txt_nom
             // 

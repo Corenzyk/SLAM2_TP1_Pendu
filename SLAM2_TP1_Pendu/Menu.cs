@@ -15,20 +15,26 @@ namespace SLAM2_TP1_Pendu
     {
         public SousFormulaire SF;
 
+        #region Constructeur menu
         public Menu()
         {
             InitializeComponent();
             SF = new SousFormulaire(pan_menu);
         }
+        #endregion
 
+        #region Accès page jeu
         private void démarrerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SF.openChildForm(new Form1());
         }
+        #endregion
 
+        #region Accès page données
         private void donnéesToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             SF.openChildForm(new Donnees());
         }
+        #endregion
     }
 }

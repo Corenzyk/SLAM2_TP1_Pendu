@@ -56,8 +56,8 @@
             this.btn_v = new System.Windows.Forms.Button();
             this.btn_s = new System.Windows.Forms.Button();
             this.btn_r = new System.Windows.Forms.Button();
-            this.q = new System.Windows.Forms.Button();
-            this.p = new System.Windows.Forms.Button();
+            this.btn_q = new System.Windows.Forms.Button();
+            this.btn_p = new System.Windows.Forms.Button();
             this.btn_o = new System.Windows.Forms.Button();
             this.btn_n = new System.Windows.Forms.Button();
             this.txt_timer = new System.Windows.Forms.TextBox();
@@ -346,25 +346,25 @@
             this.btn_r.UseVisualStyleBackColor = true;
             this.btn_r.Click += new System.EventHandler(this.btn_Click);
             // 
-            // q
+            // btn_q
             // 
-            this.q.Location = new System.Drawing.Point(175, 406);
-            this.q.Name = "q";
-            this.q.Size = new System.Drawing.Size(37, 33);
-            this.q.TabIndex = 21;
-            this.q.Text = "Q";
-            this.q.UseVisualStyleBackColor = true;
-            this.q.Click += new System.EventHandler(this.btn_Click);
+            this.btn_q.Location = new System.Drawing.Point(175, 406);
+            this.btn_q.Name = "btn_q";
+            this.btn_q.Size = new System.Drawing.Size(37, 33);
+            this.btn_q.TabIndex = 21;
+            this.btn_q.Text = "Q";
+            this.btn_q.UseVisualStyleBackColor = true;
+            this.btn_q.Click += new System.EventHandler(this.btn_Click);
             // 
-            // p
+            // btn_p
             // 
-            this.p.Location = new System.Drawing.Point(132, 406);
-            this.p.Name = "p";
-            this.p.Size = new System.Drawing.Size(37, 33);
-            this.p.TabIndex = 20;
-            this.p.Text = "P";
-            this.p.UseVisualStyleBackColor = true;
-            this.p.Click += new System.EventHandler(this.btn_Click);
+            this.btn_p.Location = new System.Drawing.Point(132, 406);
+            this.btn_p.Name = "btn_p";
+            this.btn_p.Size = new System.Drawing.Size(37, 33);
+            this.btn_p.TabIndex = 20;
+            this.btn_p.Text = "P";
+            this.btn_p.UseVisualStyleBackColor = true;
+            this.btn_p.Click += new System.EventHandler(this.btn_Click);
             // 
             // btn_o
             // 
@@ -453,8 +453,8 @@
             this.Controls.Add(this.btn_v);
             this.Controls.Add(this.btn_s);
             this.Controls.Add(this.btn_r);
-            this.Controls.Add(this.q);
-            this.Controls.Add(this.p);
+            this.Controls.Add(this.btn_q);
+            this.Controls.Add(this.btn_p);
             this.Controls.Add(this.btn_o);
             this.Controls.Add(this.btn_n);
             this.Controls.Add(this.btn_l);
@@ -516,8 +516,8 @@
         private System.Windows.Forms.Button btn_v;
         private System.Windows.Forms.Button btn_s;
         private System.Windows.Forms.Button btn_r;
-        private System.Windows.Forms.Button q;
-        private System.Windows.Forms.Button p;
+        private System.Windows.Forms.Button btn_q;
+        private System.Windows.Forms.Button btn_p;
         private System.Windows.Forms.Button btn_o;
         private System.Windows.Forms.Button btn_n;
         private System.Windows.Forms.Label label1;

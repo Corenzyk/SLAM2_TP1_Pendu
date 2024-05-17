@@ -13,11 +13,14 @@ namespace SLAM2_TP1_Pendu.Model
         public Panel PanelSousFormlaire;
         public Form activeForm = null;
 
+        #region Constructeur SF
         public SousFormulaire(Panel panelenvoit)
         {
             PanelSousFormlaire = panelenvoit;
         }
+        #endregion
 
+        #region OpenChildForm
         public void openChildForm(Form formEnfant)
         {
             if (activeForm != null)
@@ -32,6 +35,7 @@ namespace SLAM2_TP1_Pendu.Model
             formEnfant.BringToFront();
             formEnfant.Show();
         }
+        #endregion
     }
 
 }

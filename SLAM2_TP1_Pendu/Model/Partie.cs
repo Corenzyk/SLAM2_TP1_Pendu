@@ -16,7 +16,7 @@ namespace SLAM2_TP1_Pendu.Model
         public Int32 tempsPartie;
         public Int32 dureeCoup;
 
-
+        #region Gestion image pendu
         public void changerIMG(PictureBox pb_pendu)
         {
             switch (nbEssais)
@@ -53,7 +53,9 @@ namespace SLAM2_TP1_Pendu.Model
                     break;
             }
         }
+        #endregion
 
+        #region Vérif lettres tapées
         public void verification(string lettretape, TextBox txt_afficher_mot)
         {
             char[] cArray = motatrouver.ToCharArray();
@@ -77,7 +79,9 @@ namespace SLAM2_TP1_Pendu.Model
                 nbEssais++;
             txt_afficher_mot.Text = motaafficher;
         }
+        #endregion
 
+        #region Génération mot à afficher
         public void genererMotAfficher(string motatrouver)
         {
             string motaff = "";
@@ -87,14 +91,18 @@ namespace SLAM2_TP1_Pendu.Model
 
             motaafficher = motaff;
         }
+        #endregion
 
+        #region Génération mot à trouver
         public void choisirMotATrouver(List<String> listeATrouver)
         {
             Random aleatoire = new Random();
             int nbAleatoire = aleatoire.Next(listeATrouver.Count);
             motatrouver = listeATrouver[nbAleatoire].ToUpper();
         }
+        #endregion
 
+        #region Gestion fin de partie
         public void victoire(Form formulaireJeuActif, TextBox txt_motAafficher, List<string> listeMotaTrouver, PictureBox pbpendu)
         {
             DialogResult msg;
@@ -127,7 +135,9 @@ namespace SLAM2_TP1_Pendu.Model
                 }
             }
         }
+        #endregion
 
+        #region Remise à zéro
         public void remiseAZero(Form formulaireJeuActif, TextBox txt_motAafficher, List<String> listeMotaTrouver, PictureBox pb_pendu)
         {
             motaafficher = "";
@@ -146,7 +156,9 @@ namespace SLAM2_TP1_Pendu.Model
             nbEssais = 0;
             changerIMG(pb_pendu);
         }
+        #endregion
 
+        #region Gestion timer
         public void gestionTimer(TextBox txt_timer, ProgressBar progB, Form jeuEnCours, PictureBox pb, TextBox txt_afficher, List<string> listeMotaTrouver)
         {
             timer = new Timer();
@@ -155,7 +167,9 @@ namespace SLAM2_TP1_Pendu.Model
 
             timer.Start();
         }
+        #endregion
 
+        #region Compte à rebours timer
         public void Timer_Tick(object sender, EventArgs e, TextBox txt_timer, ProgressBar progB, Form jeuEnCours, PictureBox pb, TextBox txt_afficher, List<string> listeMotaTrouver)
         {
             tempsPartie++;
@@ -176,5 +190,6 @@ namespace SLAM2_TP1_Pendu.Model
             }
             txt_timer.Text = tempsPartie.ToString() + " sec";
         }
+        #endregion
     }
 }

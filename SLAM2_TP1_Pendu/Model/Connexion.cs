@@ -19,6 +19,7 @@ namespace SLAM2_TP1_Pendu.Model
         private string uid;
         private string password;
 
+        #region Initialisation connexion
         private void Initialise()
         {
             server = "192.168.10.16";
@@ -31,12 +32,13 @@ namespace SLAM2_TP1_Pendu.Model
 
             connection = new MySqlConnection(connectionString);
         }
+        #endregion
 
+        #region Connexion
         public Connexion() 
         {
             Initialise();
         }
-
-
+        #endregion
     }
 }
