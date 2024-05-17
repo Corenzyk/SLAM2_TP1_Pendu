@@ -15,6 +15,7 @@ namespace SLAM2_TP1_Pendu.Controllers
         private DataTable dtListeMots;
         private Connexion conn;
 
+        #region Récupération liste mots
         public DataTable GetListeMots()
         {
             dtListeMots = new DataTable();
@@ -34,7 +35,9 @@ namespace SLAM2_TP1_Pendu.Controllers
             }
             return dtListeMots;
         }
+        #endregion
 
+        #region Récupération liste mots / difficulté
         public DataTable GetListeMotsdifficult(string extMot, int idDiff)
         {
             string rqtSql = "SELECT IDMOTS, LABELMOTS AS Mots, mots.IDDIFFICULTE, LABELDIFFICULTE AS Difficulte FROM mots INNER JOIN difficulte diff ON mots.IDDIFFICULTE=diff.IDDIFFICULTE ";
@@ -75,8 +78,7 @@ namespace SLAM2_TP1_Pendu.Controllers
                     MessageBox.Show(e.ToString(), "Erreur 3", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign, true);
                 }
                 return dtListeMots;
-            
-           
         }
+        #endregion
     }
 }

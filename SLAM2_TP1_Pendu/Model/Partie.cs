@@ -147,16 +147,16 @@ namespace SLAM2_TP1_Pendu.Model
             changerIMG(pb_pendu);
         }
 
-        public void gestionTimer(TextBox txt_timer, ProgressBar progB, PictureBox pb)
+        public void gestionTimer(TextBox txt_timer, ProgressBar progB, Form jeuEnCours, PictureBox pb, TextBox txt_afficher, List<string> listeMotaTrouver)
         {
             timer = new Timer();
             timer.Interval = 1000;
-            timer.Tick += (sender, e) => Timer_Tick(sender, e, txt_timer, progB, pb);
+            timer.Tick += (sender, e) => Timer_Tick(sender, e, txt_timer, progB, jeuEnCours, pb, txt_afficher, listeMotaTrouver);
 
             timer.Start();
         }
 
-        public void Timer_Tick(object sender, EventArgs e, TextBox txt_timer, ProgressBar progB, PictureBox pb)
+        public void Timer_Tick(object sender, EventArgs e, TextBox txt_timer, ProgressBar progB, Form jeuEnCours, PictureBox pb, TextBox txt_afficher, List<string> listeMotaTrouver)
         {
             tempsPartie++;
             dureeCoup++;
@@ -167,12 +167,12 @@ namespace SLAM2_TP1_Pendu.Model
                 dureeCoup = 0;
                 nbEssais++;
                 changerIMG(pb);
-                /*
+                
                 if (nbEssais == 8)
                 {
-                    victoire(form, txt, liste, pb);
+                    victoire(jeuEnCours, txt_afficher, listeMotaTrouver, pb);
                 }
-                */
+                
             }
             txt_timer.Text = tempsPartie.ToString() + " sec";
         }

@@ -24,7 +24,7 @@ namespace SLAM2_TP1_Pendu
             P.choisirMotATrouver(listeMotATrouver);
             P.genererMotAfficher(P.motatrouver);
             txt_afficher_mot.Text = P.motaafficher;
-            P.gestionTimer(txt_timer, progB_coup, pb_pendu);
+            P.gestionTimer(txt_timer, progB_coup, this, pb_pendu, txt_afficher_mot, listeMotATrouver);
         }
 
         public Jeu()

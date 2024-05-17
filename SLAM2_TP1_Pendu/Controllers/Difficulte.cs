@@ -14,7 +14,8 @@ namespace SLAM2_TP1_Pendu.Controllers
     {
         private DataTable dtListeDifficulte;
         private Connexion conn;
-        private DataTable dtListeMots;
+
+        #region Recupération liste difficulté
         public DataTable GetListeDifficulte()
         {
             dtListeDifficulte = new DataTable();
@@ -39,7 +40,9 @@ namespace SLAM2_TP1_Pendu.Controllers
             dtListeDifficulte.Rows.InsertAt(workRow, 0);
             return dtListeDifficulte;
         }
+        #endregion
 
+        #region Récupération difficulté spécifique
         public string GetDiff(int idDiff)
         {
             DataTable temp = new DataTable();
@@ -52,7 +55,10 @@ namespace SLAM2_TP1_Pendu.Controllers
                     conn.Connection.Open();
                     MySqlDataReader reader = cmd.ExecuteReader();
                     temp.Load(reader);
-                    diff = temp.ToString();
+                    foreach(DataRow dr in temp.Rows)
+                    {
+                        diff = dr[0].ToString();
+                    }
                     conn = null;
                 }
             }
@@ -62,5 +68,6 @@ namespace SLAM2_TP1_Pendu.Controllers
             }
             return diff;
         }
+        #endregion
     }
 }

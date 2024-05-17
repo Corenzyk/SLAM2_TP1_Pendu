@@ -47,7 +47,7 @@ namespace SLAM2_TP1_Pendu
             if (erreur==true)
             {
                 SousFormulaire SF = new SousFormulaire((System.Windows.Forms.Application.OpenForms["Menu"] as Menu).pan_menu);
-                SF.openChildForm(new Jeu(txt_prenom.Text + " " + txt_nom.Text, dt_difficulte.GetDiff(Convert.ToInt32(cb_diff.SelectedValue.ToString()))));
+                SF.openChildForm(new Jeu(txt_prenom.Text + " " + txt_nom.Text, dt_difficulte.GetDiff(cb_diff.SelectedIndex)));
                 this.Hide();
             }
         }
