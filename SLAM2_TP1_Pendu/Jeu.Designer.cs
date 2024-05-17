@@ -426,7 +426,7 @@
             // 
             this.btn_close.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.3F);
             this.btn_close.ForeColor = System.Drawing.Color.Red;
-            this.btn_close.Location = new System.Drawing.Point(778, 12);
+            this.btn_close.Location = new System.Drawing.Point(794, 12);
             this.btn_close.Name = "btn_close";
             this.btn_close.Size = new System.Drawing.Size(30, 30);
             this.btn_close.TabIndex = 34;

@@ -40,6 +40,7 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.pan_menu = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ajouterUnMotToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.pan_menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -96,6 +97,8 @@
             // 
             // toolStripMenuItem1
             // 
+            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ajouterUnMotToolStripMenuItem});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(24, 20);
             this.toolStripMenuItem1.Text = "?";
@@ -122,6 +125,12 @@
             this.pictureBox1.Size = new System.Drawing.Size(512, 473);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // ajouterUnMotToolStripMenuItem
+            // 
+            this.ajouterUnMotToolStripMenuItem.Name = "ajouterUnMotToolStripMenuItem";
+            this.ajouterUnMotToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ajouterUnMotToolStripMenuItem.Text = "Ajouter un mot";
             // 
             // Menu
             // 
@@ -155,5 +164,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         public System.Windows.Forms.Panel pan_menu;
         private System.Windows.Forms.ToolStripMenuItem donnéesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ajouterUnMotToolStripMenuItem;
     }
 }
